@@ -1,6 +1,6 @@
 # NestJS + Web3.js 
 
-REST API that interacts with Infura node trough nest `web3.module`
+REST API that interacts with a eth provider using web3.js
 
 ## Available endpoints
 
