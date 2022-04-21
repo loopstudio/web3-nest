@@ -1,4 +1,4 @@
-# NestJS + Web3.js 
+# NestJS + Web3.js
 
 NestJS REST API that interacts with Infura node trough nest web3.module
 
