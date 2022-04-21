@@ -1,13 +1,15 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import Web3 from 'web3';
 
 @Injectable()
 export class Web3Service {
   private web3Instance: Web3;
 
-  constructor(@Inject('rpcEndpoint') rpcEndpoint: string) {
-    console.log('cALLING CONSTURCTOR WITH', rpcEndpoint);
-    this.web3Instance = new Web3(new Web3.providers.HttpProvider(rpcEndpoint));
+  constructor() {
+    this.web3Instance = new Web3(
+      new Web3.providers.HttpProvider(process.env.WEB3_RPC_ENDPOINT),
+    );
   }
 
   async getBlockNumber(): Promise<number> {
