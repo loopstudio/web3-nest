@@ -6,7 +6,6 @@ import { BlockService } from './block.service';
 
 describe('Block Controller', () => {
   let blockController: BlockController;
-  let web3Service: Web3Service;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
@@ -16,7 +15,6 @@ describe('Block Controller', () => {
     }).compile();
 
     blockController = app.get<BlockController>(BlockController);
-    web3Service = app.get<Web3Service>(Web3Service);
   });
 
   describe('root', () => {
