@@ -17,7 +17,6 @@ describe('Block Controller', () => {
 
     blockController = app.get<BlockController>(BlockController);
     web3Service = app.get<Web3Service>(Web3Service);
-    web3Service.initWeb3Instance(process.env.WEB3_RPC_ENDPOINT);
   });
 
   describe('root', () => {

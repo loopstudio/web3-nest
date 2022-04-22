@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TransactionController } from './transaction.controller';
 import { TransactionService } from './transaction.service';
-import { ConfigModule } from '@nestjs/config';
 import { Web3Module } from 'src/web3/web3.module';
 
 @Module({

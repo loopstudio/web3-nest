@@ -9,7 +9,12 @@ import { TransactionService } from './transaction/transaction.service';
 import { TransactionController } from './transaction/transaction.controller';
 
 @Module({
-  imports: [Web3Module, ConfigModule.forRoot()],
+  imports: [
+    Web3Module,
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+  ],
   controllers: [BlockController, AddressController, TransactionController],
   providers: [BlockService, AddressService, TransactionService],
 })
