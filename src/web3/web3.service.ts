@@ -23,7 +23,9 @@ export class Web3Service {
   }
 
   async getBalance(address: string): Promise<string> {
-    return await this.web3Instance.eth.getBalance(address);
+    return this.web3Instance.utils.fromWei(
+      await this.web3Instance.eth.getBalance(address),
+    );
   }
 
   async getTransaction(transactionHash: string) {
