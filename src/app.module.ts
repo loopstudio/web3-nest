@@ -2,20 +2,24 @@ import { Module } from '@nestjs/common';
 import { Web3Module } from './web3/web3.module';
 import { ConfigModule } from '@nestjs/config';
 import { BlockController } from './block/block.controller';
-import { BlockService } from './block/block.service';
-import { AddressService } from './address/address.service';
 import { AddressController } from './address/address.controller';
-import { TransactionService } from './transaction/transaction.service';
 import { TransactionController } from './transaction/transaction.controller';
+
+import { AddressModule } from './address/address.module';
+import { TransactionModule } from './transaction/transaction.module';
+import { BlockModule } from './block/block.module';
 
 @Module({
   imports: [
     Web3Module,
+    BlockModule,
+    TransactionModule,
+    AddressModule,
     ConfigModule.forRoot({
       isGlobal: true,
     }),
   ],
   controllers: [BlockController, AddressController, TransactionController],
-  providers: [BlockService, AddressService, TransactionService],
+  providers: [],
 })
 export class AppModule {}

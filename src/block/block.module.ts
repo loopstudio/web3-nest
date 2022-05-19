@@ -5,5 +5,6 @@ import { BlockService } from './block.service';
 @Module({
   controllers: [BlockController],
   providers: [BlockService],
+  exports: [BlockService],
 })
-export class AppModule {}
+export class BlockModule {}
