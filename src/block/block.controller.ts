@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { BlockService } from './block.service';
 
 @Controller('/block')
@@ -11,7 +11,7 @@ export class BlockController {
   }
 
   @Get(':id')
-  async getBlock(@Param('id') id: number) {
+  async getBlock(@Param('id', ParseIntPipe) id: number) {
     return await this.blockService.getBlock(id);
   }
 }
