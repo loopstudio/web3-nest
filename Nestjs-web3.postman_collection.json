@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "88f9d291-060f-4e45-80ec-7225fe983ba4",
+		"name": "Nestjs-web3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get block number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/block",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"block"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get block",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/block/12280475",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"block",
+						"12280475"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get address balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/address/0xB12713BfA9d1DE339ca14B01F8F14f092ffE75bf",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"address",
+						"0xB12713BfA9d1DE339ca14B01F8F14f092ffE75bf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/transaction/0xb3e64826f1068213afeb794bbb18fdf4317615d7a956a65eeaa27c5f3d10f271",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transaction",
+						"0xb3e64826f1068213afeb794bbb18fdf4317615d7a956a65eeaa27c5f3d10f271"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
