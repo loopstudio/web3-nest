@@ -21,18 +21,4 @@ export class AddressController {
   ): Promise<string> {
     return await this.addressService.getBalance(address);
   }
-
-  @Get('/')
-  async getAddresses() {
-    return await this.addressService.getAddresses();
-  }
-
-  @Post('/create')
-  async createAddress(@Res() res, @Body() createAddressDTO: CreateAddressDTO) {
-    const address = await this.addressService.createAddress(createAddressDTO);
-    return res.status(HttpStatus.OK).json({
-      message: 'Address Succesfully Created',
-      address,
-    });
-  }
 }

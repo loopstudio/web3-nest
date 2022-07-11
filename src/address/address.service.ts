@@ -16,14 +16,4 @@ export class AddressService {
   async getBalance(address: string): Promise<string> {
     return await this.web3Service.getBalance(address);
   }
-
-  async getAddresses() {
-    const addresses = await this.addressModel.find();
-    return addresses;
-  }
-
-  async createAddress(createAddressDTO: CreateAddressDTO): Promise<Address> {
-    const newAddress = new this.addressModel(createAddressDTO);
-    return newAddress.save();
-  }
 }
