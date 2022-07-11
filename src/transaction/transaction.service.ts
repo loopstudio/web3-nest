@@ -11,7 +11,7 @@ export class TransactionService {
     @InjectModel('Transaction') private transactionModel: Model<Transaction>,
   ) {}
 
-  async getTransaction(transactionHash: string) {
+  async getTransaction(transactionHash: string): Promise<Transaction> {
     // buscar bloque en base de datos
     // existe? lo devuelvo
     // no existe? lo busco en web3, si existe lo creo en la db y lo devuelvo
@@ -33,7 +33,7 @@ export class TransactionService {
       if (transaction) {
         console.log('Creando Tx en la DB...');
         const newTransaction = new this.transactionModel(transaction);
-        return newTransaction.save();
+        return await newTransaction.save();
       }
     }
   }
