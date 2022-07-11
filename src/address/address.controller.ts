@@ -1,15 +1,6 @@
-import {
-  Controller,
-  Get,
-  Param,
-  Post,
-  Res,
-  Body,
-  HttpStatus,
-} from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AddressValidationPipe } from './address-validation.pipe';
 import { AddressService } from './address.service';
-import { CreateAddressDTO } from './address.dto';
 
 @Controller('/address')
 export class AddressController {

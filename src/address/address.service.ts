@@ -4,7 +4,6 @@ import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 
 import { Address } from './address.interface';
-import { CreateAddressDTO } from './address.dto';
 
 @Injectable()
 export class AddressService {
