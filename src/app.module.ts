@@ -8,6 +8,7 @@ import { TransactionController } from './transaction/transaction.controller';
 import { AddressModule } from './address/address.module';
 import { TransactionModule } from './transaction/transaction.module';
 import { BlockModule } from './block/block.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { BlockModule } from './block/block.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    MongooseModule.forRoot('mongodb://localhost/nest'),
   ],
   controllers: [BlockController, AddressController, TransactionController],
   providers: [],
