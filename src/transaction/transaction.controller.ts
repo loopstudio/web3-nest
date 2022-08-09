@@ -6,7 +6,7 @@ export class TransactionController {
   constructor(private readonly transactionService: TransactionService) {}
 
   @Get(':transactionHash')
-  async getBalance(@Param('transactionHash') transactionHash: string) {
+  async getTransaction(@Param('transactionHash') transactionHash: string) {
     return await this.transactionService.getTransaction(transactionHash);
   }
 }

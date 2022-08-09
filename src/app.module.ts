@@ -9,6 +9,9 @@ import { AddressModule } from './address/address.module';
 import { TransactionModule } from './transaction/transaction.module';
 import { BlockModule } from './block/block.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -19,9 +22,13 @@ import { MongooseModule } from '@nestjs/mongoose';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+    }),
     MongooseModule.forRoot('mongodb://localhost/nest'),
   ],
-  controllers: [BlockController, AddressController, TransactionController],
+  controllers: [AddressController, TransactionController, BlockController],
   providers: [],
 })
 export class AppModule {}

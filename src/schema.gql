@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Transaction {
+  hash: String!
+  blockHash: String!
+  blockNumber: Float!
+  chainId: String!
+  from: String!
+  gas: Float!
+  gasPrice: String!
+  input: String!
+  nonce: Float!
+  r: String!
+  s: String!
+  to: String!
+  transactionIndex: Float!
+  type: Float!
+  v: String!
+  value: String!
+}
+
+type Block {
+  transactions: [String!]!
+  size: Float!
+  difficulty: Float!
+  totalDifficulty: Float!
+  number: Float!
+  hash: String!
+}
+
+type Query {
+  blockNumber: Float!
+  getBlock(id: Float!): Block!
+  getTransaction(transactionHash: String!): Transaction!
+}
